@@ -1,0 +1,32 @@
+<h1>This is the HomePage</h1>
+
+<%include header%>
+
+<div class="container ">
+<form method="POST" action="/data">
+  <input class="form-control" type="text" name="title" placeholder="Put a title for your post">
+  <br>
+  <p class=" alert-success">Enter the body for your post in here</p>
+  <textarea class="form-control" placeholder="" rows="5" cols="" name="body">
+  
+  </textarea>
+   <br>
+  <input class="btn btn-outline-primary btn-block" type="submit" value="Add">
+</form>
+
+
+<% data.forEach(function(data){ %>
+<div class="pt-3 bg-primary border-rounded rounded">
+  <h1 class="pt-3"><%= data.title %></h1>
+  <p class="p-3"><%= data.body %></p>
+  <div class="mb-4 d-block pb-3">
+  <a class="btn btn-outline-danger" href="/delete/<%= data._id %>">DELETE</a>
+  <a href="/update/<%= data._id %>" class="btn btn-success">UPDATE</a>
+  <br>
+  </div>
+  </div>
+<% }) %>
+
+</div>
+
+<%include footer%>

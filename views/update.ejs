@@ -1,0 +1,17 @@
+
+
+<%include header%>
+
+<div class="container">
+<form method="POST" action="/data/update">
+  <input class="form-control" type="text" name="title"  placeholder="Title">
+  <br>
+  <input class="form-control" type="text" name="body"  placeholder="Body">
+  <br>
+  <input type="text" name="id" value="<%= id %>" style="display:none">
+  <br>
+  <input class="btn btn-default" type="submit" value="Update">
+</form>
+
+</div>
+<%include footer%>
